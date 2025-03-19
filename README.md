@@ -1,6 +1,6 @@
 # tienda - Proyecto Angular
 
-Proyecto realizado para practicar para el examen de la asignatura "Desarrollo Web en Entorno Cliente (DWEC)"<br>
+Proyecto realizado para practicar para el examen del módulo Desarrollo Web en Entorno Cliente (DWEC)<br>
 del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
 
 Utilizando Angular.<br>
