@@ -1,0 +1,19 @@
+<h2>Productos</h2>
+
+<div *ngIf="productos$ | async as productos; else spinner">
+  <table border="1" *ngFor="let producto of productos">
+    <tr>
+      <th>{{ producto.title }}</th>
+    </tr>
+    <tr>
+      <td><img [src]="producto.thumbnail" [alt]="producto.title"></td>
+    </tr>
+    <tr>
+      <td>{{ producto.description }}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #spinner>
+  <p>Cargando productos...</p>
+</ng-template>

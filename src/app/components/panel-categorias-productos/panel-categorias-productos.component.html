@@ -1,0 +1,34 @@
+<h2>Categorías y Productos</h2>
+
+<div *ngIf="categorias$ | async as categorias; else spinnerCategorias" class="categories-section">
+
+  <p>Selecciona una categoría:</p>
+
+  <div *ngFor="let categoria of categorias">
+    <input type="radio" [id]="categoria.slug" [value]="categoria.slug" (change)="onCategorySelect($event)">
+    <label [for]="categoria.slug">{{ categoria.name }}</label>
+  </div>
+
+</div>
+
+<ng-template #spinnerCategorias>
+  <p>Cargando categorías...</p>
+</ng-template>
+
+<div class="products-section" *ngIf="productos$ | async as productos; else spinnerProductos">
+  <table border="1" *ngFor="let producto of productos">
+    <tr>
+      <th>{{ producto.title }}</th>
+    </tr>
+    <tr>
+      <td><img [src]="producto.thumbnail" [alt]="producto.title"></td>
+    </tr>
+    <tr>
+      <td>{{ producto.description }}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #spinnerProductos>
+  <p *ngIf="productos$">Cargando productos...</p>
+</ng-template>

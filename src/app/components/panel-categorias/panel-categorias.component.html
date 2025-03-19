@@ -1,0 +1,11 @@
+<h2>Categorías</h2>
+<div>
+  <select (change)="gotoProductsByCategory($event)" *ngIf="categorias$ | async as categorias; else spinner">
+    <option selected disabled>Selecciona una categoría</option>
+    <option [value]="categoria.slug" *ngFor="let categoria of categorias">{{ categoria.name }}</option>
+  </select>
+</div>
+
+<ng-template #spinner>
+  <p>Cargando categorías...</p>
+</ng-template>

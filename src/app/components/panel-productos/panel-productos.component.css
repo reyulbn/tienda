@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  gap: 10px;
+}
+
+img {
+  width: 100px;
+}
+
+table {
+  max-width: 200px;
+}
